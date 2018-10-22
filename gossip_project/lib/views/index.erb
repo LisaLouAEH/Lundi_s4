@@ -1,14 +1,27 @@
-
+<!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="style.css">
     <title>The Gossip Project</title>
   </head>
   <body>
-    <h1>Mon super site de gossip, du dossier views !</h1>
+    <h1>The <strong>Gossip</strong> Project!</h1>
     <ul>
       <li><h2>Saisir un potin par <a href="/gossips/new/">ici</a> ! </h2></li>
       <li><h2>Consulter tout les potins par <a href="/gossips/show/">ici</a> ! </h2></li>
       <li><h2>Ou encore effacer un potin par <a href="/gossips/delete/">ici</a> ! </h2></li>
     </ul>
+    <% i = 0%>
+    <% gossips.each do |gossip| %>
+      <p>
+          <a href="/gossips/<%= i%>"><%= gossips[i].author %> </a>
+      </p>
+      <%i += 1%>
+    <% end %>
+    
+      <p>
+        <%= counter %>
+      </p>
   </body>
 </html>
